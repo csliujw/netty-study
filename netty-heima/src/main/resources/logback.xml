@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration
+        xmlns="http://ch.qos.logback/xml/ns/logback"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://ch.qos.logback/xml/ns/logback https://raw.githubusercontent.com/enricopulatzo/logback-XSD/master/src/main/xsd/logback.xsd">
+    <!-- 输出控制，格式控制-->
+    <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <pattern>%date{HH:mm:ss} [%-5level] [%thread] %logger{17} - %m%n</pattern>
+        </encoder>
+    </appender>
+
+    <!--<logger name="org.springframework.security.web.FilterChainProxy" level="DEBUG" additivity="false">
+        <appender-ref ref="STDOUT"/>
+    </logger>
+    <logger name="org.springframework.security.web.access.intercept.FilterSecurityInterceptor" level="DEBUG" additivity="false">
+        <appender-ref ref="STDOUT"/>
+    </logger>-->
+
+    <!--<logger name="org.springframework.security.web" level="DEBUG" additivity="false">
+        <appender-ref ref="STDOUT"/>
+    </logger>-->
+    <logger name="netty.*.*" level="DEBUG" additivity="false">
+        <appender-ref ref="STDOUT"/>
+    </logger>
+    <logger name="netty.in.*.*" level="DEBUG" additivity="false">
+        <appender-ref ref="STDOUT"/>
+    </logger>
+    <logger name="io.netty.handler.logging.LoggingHandler" level="DEBUG" additivity="false">
+        <appender-ref ref="STDOUT"/>
+    </logger>
+
+    <root level="ERROR">
+        <appender-ref ref="STDOUT"/>
+    </root>
+</configuration>

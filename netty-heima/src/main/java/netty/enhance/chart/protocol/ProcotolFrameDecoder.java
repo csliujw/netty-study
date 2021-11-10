@@ -1,0 +1,14 @@
+package netty.enhance.chart.protocol;
+
+import io.netty.handler.codec.LengthFieldBasedFrameDecoder;
+// 这个类记录的状态，所以不是 Sharable
+public class ProcotolFrameDecoder extends LengthFieldBasedFrameDecoder {
+
+    public ProcotolFrameDecoder() {
+        this(1024, 12, 4, 0, 0);
+    }
+
+    public ProcotolFrameDecoder(int maxFrameLength, int lengthFieldOffset, int lengthFieldLength, int lengthAdjustment, int initialBytesToStrip) {
+        super(maxFrameLength, lengthFieldOffset, lengthFieldLength, lengthAdjustment, initialBytesToStrip);
+    }
+}
